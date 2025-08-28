@@ -18,8 +18,8 @@ Proyek ini adalah aplikasi web sederhana untuk akuntansi yang dibangun sebagai b
 ## 🛠️ Teknologi yang Digunakan
 
 - **Backend**: Laravel, PHP
-- **Frontend**: HTML, Bootstrap 3, JavaScript, jQuery
-- **Database**: MySQL (atau database SQL lain yang didukung Laravel)
+- **Frontend**: HTML, Bootstrap 3, JavaScript, jQuery & Ajax
+- **Database**: MySQL
 - **Lainnya**: Composer, Datatables, SweetAlert2, DomPDF
 - **Postman**: Untuk uji coba REST API datanya
 
@@ -27,24 +27,25 @@ Proyek ini adalah aplikasi web sederhana untuk akuntansi yang dibangun sebagai b
 
 ## 📋 Prasyarat
 
-Sebelum memulai, pastikan Anda sudah menginstal perangkat lunak berikut di komputer Anda:
+Sebelum memulai, pastikan Anda sudah menginstal perangkat lunak sebagai berikut:
 - PHP (versi 8.1 atau lebih baru direkomendasikan)
 - Composer
 - Server Database yang di gunakan (XAMPP: MySQL)
 - Git (opsional, untuk kloning)
 - Visual Studio Code -> Text Editor
+- Postman -> Uji REST API setiap data
 
 ---
 
 ## ⚙️ Panduan Instalasi
 
-Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal Anda.
+Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lokal.
 
 **1. Dapatkan Source Code**
 
-   Jika Anda menerima proyek ini dalam bentuk file `.zip`, ekstrak file tersebut. Jika melalui Git, kloning repositori:
+   Jika proyek ini dalam bentuk file `.zip`, ekstrak file tersebut terlebih dahulu. Jika melalui Git, kloning repositori:
    ```bash
-   git clone [URL_REPOSITORY_ANDA]
+   git clone https://github.com/libertus-libertus/finance-project.git
    cd nama-folder-proyek
    ```
 
@@ -55,26 +56,26 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal A
    composer install
    ```
 
-**3. Konfigurasi Lingkungan (.env)**
+**3. Konfigurasi Lingkungan environtment variabelnya di file (.env)**
 
-   Salin file `.env.example` menjadi file `.env` baru:
+   Salin file `.env.example` kemudian dirubah menjadi file `.env` yang baru:
    ```bash
    cp .env.example .env
    ```
-   Buka file `.env` yang baru dibuat dan sesuaikan konfigurasi database Anda:
+   Buka file `.env` yang baru dibuat dan sesuaikan konfigurasi database:
    ```
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=finance_project_db  // Buat database kosong dengan nama ini
-   DB_USERNAME=root                // Ganti dengan username database Anda
-   DB_PASSWORD=                    // Ganti dengan password database Anda
+   DB_DATABASE=finance
+   DB_USERNAME=root              
+   DB_PASSWORD=                  
    ```
-   **Penting**: Pastikan Anda sudah membuat database kosong (misalnya `finance_project_db`) sebelum melanjutkan.
+   **Penting**: Pastikan Anda sudah membuat database kosong (misalnya `finance`) sebelum melanjutkan.
 
-**4. Generate Kunci Aplikasi**
+**4. Generate Key Aplikasinya**
 
-   Setiap aplikasi Laravel membutuhkan kunci enkripsi unik. Jalankan perintah ini untuk membuatnya:
+   Setiap aplikasi Laravel membutuhkan key untuk enkripsi unik. Jalankan perintah ini untuk membuatnya:
    ```bash
    php artisan key:generate
    ```
